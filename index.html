@@ -8,7 +8,6 @@
     <style>
         html, body { margin: 0; overflow: hidden; background: #050508; font-family: 'Jost', sans-serif; user-select: none; }
         
-        /* МАГИЯ ПРОФЕССИОНАЛЬНОГО БЛУМА: Накладываем ядерный неон силами видеокарты */
         canvas { 
             display: block; 
             position: absolute; 
@@ -28,7 +27,7 @@
             font-weight: 700; 
             color: #fff; 
             line-height: 1.6; 
-            font-family: 'Jost', 'Segoe UI', Verdana, sans-serif; /* Твой качественный шрифт */
+            font-family: 'Jost', 'Segoe UI', Verdana, sans-serif;
         }
         
         .btn-container { display: flex; flex-direction: column; gap: 15px; align-items: center; }
@@ -164,11 +163,9 @@
             particles.forEach((pt, index) => { pt.x += pt.dx; pt.y += pt.dy; pt.alpha -= pt.decay; if (pt.alpha <= 0) particles.splice(index, 1); });
         }
         
-        // Рисуем один раз, быстро и чисто
         ctx.fillStyle = "#050508"; ctx.fillRect(0, 0, c.width, c.height); 
         ctx.globalCompositeOperation = 'screen';
         
-        // Средний сочный блюр на 25px
         ctx.shadowBlur = 25;
         ctx.fillStyle = "#ff0055"; ctx.shadowColor = "#ff0055"; ctx.fillRect(x, y, size, size); 
         ctx.fillStyle = "#00ffcc"; ctx.shadowColor = "#00ffcc"; ctx.fillRect(coin.x, coin.y, coin.size, coin.size); 
